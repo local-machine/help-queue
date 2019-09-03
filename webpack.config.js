@@ -8,7 +8,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    resolve(__dirname, "src") + "/index.jsx"
+    resolve(__dirname, "src", "index.jsx")
   ],
 
   output: {
@@ -26,7 +26,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: resolve(__dirname, 'build'),
-    publicPath: './'
+    publicPath: '/' 
   },
 
   module: {
@@ -38,7 +38,7 @@ module.exports = {
         options: {
           presets: [
             ["es2015", {"modules": false}],
-            "react"
+            "react",
           ],
           plugins: [
             "react-hot-loader/babel"
@@ -56,6 +56,6 @@ module.exports = {
       appMountId: 'react-app-root',
       title: 'React Help Queue',
       filename: resolve(__dirname, "build", "index.html"),
-    })
+    }),
   ]
 };
